@@ -3,17 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@shopify/polaris": "^2.9.0",
+    "axios": "^0.18.0",
     "express": "^4.16.3",
+    "nodemailer": "^4.6.8",
     "pg-hstore": "^2.3.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.5",
-    "sequelize": "^4.38.0"
+    "sequelize": "^4.38.0",
+    "shopify-buy": "^1.8.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "proxy": "http://localhost:3001"
 }

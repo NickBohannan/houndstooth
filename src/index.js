@@ -3,11 +3,10 @@ import ReactDOM from 'react-dom';
 import { Welcomepage } from './welcome.js'
 import { Gallery } from "./gallery.js";
 import { Modify } from "./modify.js"
+import { Contact } from './contact.js'
 import './App.css';
 import './lightbox.js';
 import registerServiceWorker from './registerServiceWorker';
-
-
 
 class Mainpage extends Component {
     constructor(props) {
@@ -17,7 +16,7 @@ class Mainpage extends Component {
         }
         this.renderHome = this.renderHome.bind(this);
         this.renderGallery = this.renderGallery.bind(this);
-        this.renderModify = this.renderModify.bind(this);
+        this.renderContact = this.renderContact.bind(this);
     }
 
     renderHome() {
@@ -28,15 +27,23 @@ class Mainpage extends Component {
         this.setState({ display: Gallery });
     }
 
-    renderModify() {
-        this.setState({ display: Modify });
+    renderContact() {
+        this.setState({ display: Contact })
+    }
+
+    facebookLink() {
+        window.open("https://www.facebook.com/houndstoothwoodwerk", "_blank");
+    }
+
+    etsyLink() {
+        window.open("https://www.etsy.com", "_blank");
     }
 
     render() {
         return (
             <div>
                 <div id="welcomeimage">
-                    <img src={require('./erichomeimagewfont.jpg')} alt="houndstooth" />
+                    <img src={require('./erichomeimagewfont.jpg')} alt="houndstooth" onClick={this.renderHome} />
                 </div>
                 <div className="navbar">
                     <div className="link-container">
@@ -47,14 +54,17 @@ class Mainpage extends Component {
                             <a onClick={this.renderGallery}>Gallery</a>
                         </div>
                         <div id="navstock">
-                            <a onClick={this.renderModify}>Current Stock</a>
+                            <a onClick={this.etsyLink}>Current Stock on Etsy</a>
                         </div>
                         <div id="navcustom">
-                            <a>Custom Orders & Contact</a>
+                            <a onClick={this.renderContact}>Custom Orders & Contact</a>
+                        </div>
+                        <div id="facebook-link">
+                            <img src={require("./facebook.png")} onClick={this.facebookLink} />
                         </div>
                     </div>
                 </div>
-                <this.state.display renderGallery={this.renderGallery} />
+                <this.state.display renderGallery={this.renderGallery} renderModify={this.renderModify} renderContact={this.renderContact} />
             </div >
         );
     }

@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 class Welcomepage extends Component {
     render() {
         let renderGallery = this.props.renderGallery;
+        let renderModify = this.props.renderModify;
+        let renderContact = this.props.renderContact;
         return (
             <div>
                 <div className="mainbody">
@@ -10,12 +12,8 @@ class Welcomepage extends Component {
                         <img src={require("./welcomebanner.jpg")} />
                     </div>
                     <div className="home-image-container">
-
                         <img src={require("./cedarcoffeetable.jpg")} className="shadow" onClick={() => renderGallery()} height="400" width="400" />
-
-                        <a>
-                            <img src={require("./sugaroiuja.jpg")} className="shadow" height="400" width="400" />
-                        </a>
+                        <img src={require("./sugaroiuja.jpg")} className="shadow" onClick={() => renderContact()} height="400" width="400" />
                     </div>
                     <div className="text-container">
                         <div id="welcome-title">

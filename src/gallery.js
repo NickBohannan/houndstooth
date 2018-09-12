@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { openModal, closeModal, plusSlides, currentSlide, showSlides } from './lightbox.js';
+import {
+    openModal,
+    closeModal,
+    plusSlides,
+    currentSlide,
+    showSlides
+} from './lightbox.js';
 
 class Gallery extends Component {
     render() {
